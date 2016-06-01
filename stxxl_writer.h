@@ -19,7 +19,7 @@ struct STXXLEdge {
        stxxl::linuxaio_file file;
        vector_type vector;
        bufwriter_type writer;
-       uint64_t edges_written;
+       long long int edges_written;
 
        STXXLEdgeWriter(const std::string & filename, uint64_t expected_num_elems = 0)
              : file(filename, stxxl::file::DIRECT | stxxl::file::RDWR | stxxl::file::CREAT | stxxl::file::TRUNC)
