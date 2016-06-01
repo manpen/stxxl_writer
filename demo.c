@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
     // If you dont know it - no harm done, the writer will take care of it
     // but may be slightly(!) slower
     // The function will allocate the required memory
-    STXXLEdgeWriter* writer = stxxl_writer_open_file("clique.bin", 1 << 20);
+    STXXLEdgeWriter* writer = stxxl_writer_open_file("clique.bin", 0);
 
     STXXLEdge edge;
     edge.first = nodes-1;
