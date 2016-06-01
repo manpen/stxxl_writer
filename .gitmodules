@@ -1,0 +1,3 @@
+[submodule "extlib/stxxl"]
+	path = extlib/stxxl
+	url = https://github.com/stxxl/stxxl
