@@ -1,6 +1,5 @@
 #include "stxxl_writer.h"
 
-//extern "C" {
 STXXLEdgeWriter *stxxl_writer_open_file(const char *filename, long long int elements_estimated) {
     return new STXXLEdgeWriter(filename, elements_estimated);
 }

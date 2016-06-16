@@ -1,11 +1,23 @@
 #ifndef _STXXL_WRITER_HEADER
 #define _STXXL_WRITER_HEADER
 
+#ifdef __cplusplus
+#include <cstdint>
+#else
+#include <stdint.h>
+#endif
+
 // You may alter this type
 typedef struct STXXLEdge STXXLEdge;
 struct STXXLEdge {
-    long long int first;
-    long long int second;
+    long long unsigned int first;
+    long long unsigned int second;
+
+#ifdef __cplusplus
+    bool operator==(const STXXLEdge& r) const {
+        return first==r.first && second==r.second;
+    }
+#endif
 };
 
 #ifdef __cplusplus
