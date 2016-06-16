@@ -29,6 +29,8 @@ SET(CMAKE_BUILD_TYPE "${TMP_CMAKE_BUILD_TYPE}")
 
 include_directories(${STXXL_INCLUDE_DIRS})
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -g")
+
 
 # enable warnings (always good)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -pipe")
@@ -37,4 +39,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -pipe")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${STXXL_CXX_FLAGS}")
 
 add_library(stxxl_writer STATIC stxxl_writer.cpp)
+
+add_executable(converter converter.cpp)
+target_link_libraries(converter stxxl_writer ${STXXL_LIBRARIES})
 
